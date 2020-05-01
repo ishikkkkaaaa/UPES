@@ -9,13 +9,13 @@
 #include<iostream>
 using namespace std;
 
-void default_fun(int a = 100);
+void fun(int a = 100);
 
 int main(){
-	default_fun();
-	default_fun(200);
+	fun();
+	fun(200);
 }
 
-void default_fun(int a){
+void fun(int a){
 	cout<<a<<endl;
 }
