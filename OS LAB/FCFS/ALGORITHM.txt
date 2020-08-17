@@ -29,7 +29,7 @@ ____________________________________
 		P[i]->turn_around_time := P[i]->burst_time + P[i]->waiting_time.
 		temp : = temp + P[i]->burst_time.
             end for
-5 avg_waiting_time :=0,avg_turn_around_time :=0.
+5) avg_waiting_time :=0,avg_turn_around_time :=0.
 	for i :=1 to N do
 		avg_waiting_time  := avg_waiting_time + P[i]->waiting_timet
 		avg_turn_around_time := avg_turn_around_time + P[i]->turn_around_time
