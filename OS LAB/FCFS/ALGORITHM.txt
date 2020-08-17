@@ -17,7 +17,7 @@ STEP4- and then when p1 is executed p2 comes in, and then after its execution p3
 average time=(0+5+13)/2=9
 ____________________________________
  here n is the number of processes
- 1) declare P[n]-p is an array containing bust time, waiting and turn around Time
+ 1) declare P[n]-p is an array containing burst time, waiting and turn around Time(time taken after arrival)
  2)input the value of name, burst time and arival time for each process
  3) we then do the sorting acc to their arrival Time
  4) temp := 0;
