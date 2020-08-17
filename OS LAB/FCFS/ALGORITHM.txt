@@ -15,6 +15,13 @@ STEP3 - at time=13, p3 is arrived which is kept in queue
 STEP4- and then when p1 is executed p2 comes in, and then after its execution p3 comes in
 
 average time=(0+5+13)/2=9
+
+note
+Completion Time: Time at which process completes its execution.
+Turn Around Time: Time Difference between completion time and arrival time. Turn Around Time = Completion Time – Arrival Time
+Waiting Time(W.T): Time Difference between turn around time and burst time.
+Waiting Time = Turn Around Time – Burst Time
+Service Time : Service time means amount of time after which a process can start execution
 ____________________________________
  here n is the number of processes
  1) declare P[n]-p is an array containing burst time, waiting and turn around Time(time taken after arrival)
