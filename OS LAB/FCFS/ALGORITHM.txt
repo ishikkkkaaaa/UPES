@@ -1,0 +1,38 @@
+algorith:-
+
+process | burst time | waiting time
+p1      |5           |0
+p2      |8           |5
+p3      |2           |13
+___________________________
+|P1     |P2       |P3      |
+|_______|_________|________|
+0       5         13       15
+
+STEP1-  process starts with p1 where the arrival time is 0
+STEP2- at time=5, p2 arrives while p1 is still executing, thus p2 is kept in queue
+STEP3 - at time=13, p3 is arrived which is kept in queue
+STEP4- and then when p1 is executed p2 comes in, and then after its execution p3 comes in
+
+average time=(0+5+13)/2=9
+____________________________________
+ here n is the number of processes
+ 1) declare P[n]-p is an array containing bust time, waiting and turn around Time
+ 2)input the value of name, burst time and arival time for each process
+ 3) we then do the sorting acc to their arrival Time
+ 4) temp := 0;
+	    for i := 1 to n do
+		if temp < P[i]->arrival_time then
+			temp := P[i]->arrival_time
+                end if.
+		P[i]->waiting_time := temp - P[i]->arrrival_time.
+		P[i]->turn_around_time := P[i]->burst_time + P[i]->waiting_time.
+		temp : = temp + P[i]->burst_time.
+            end for
+5 avg_waiting_time :=0,avg_turn_around_time :=0.
+	for i :=1 to N do
+		avg_waiting_time  := avg_waiting_time + P[i]->waiting_timet
+		avg_turn_around_time := avg_turn_around_time + P[i]->turn_around_time
+        end for.
+	avg_waiting_time  := avg_waiting_time /N;
+	avg_turn_around_time  := avg_turn_around_time /N;
