@@ -16,7 +16,9 @@ STEP4- and then when p1 is executed p2 comes in, and then after its execution p3
 
 average time=(0+5+13)/2=9
 
-note
+waiting time of current process is the sum of the burst time of all its previous process
+
+note to self
 Completion Time: Time at which process completes its execution.
 Turn Around Time: Time Difference between completion time and arrival time. Turn Around Time = Completion Time – Arrival Time
 Waiting Time(W.T): Time Difference between turn around time and burst time.
