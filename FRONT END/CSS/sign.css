@@ -1,0 +1,46 @@
+body{
+	margin:0;
+	padding: 0;
+	font-family: cursive;
+	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../background1.jpg);
+	background-size: cover;
+	background-position: center;
+
+}
+
+
+.sign_student{
+	width: 300px;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+	background: #D8C3BE;
+	padding: 20px;
+	margin: 8% auto 0;
+    text-align: center;
+}
+
+.input-box{
+	border-radius: 20px;
+	padding: 10px;
+	margin: 10px 0;
+	width: 100%;
+	border: 1px solid #999;
+	outline: none;
+}
+
+button{
+	border-radius: 20px;
+	padding: 10px;
+	margin: 10px 0;
+	width: 100%;
+	border: 1px solid #999;
+	outline: none;
+
+}
+
+
+
+
+
+
+
+
