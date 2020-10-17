@@ -140,7 +140,7 @@ border: 2px solid #999;
 outline: none;
 }
 /*ABOUT US*/
-div.polaroid {
+.polaroid {
 float:left;
 height:100%;
 object-fit:cover;
@@ -150,7 +150,7 @@ object-fit:cover;
   margin-bottom: 25px;
 }
 
-div.container {
+.container {
   text-align: center;
   padding: 10px 20px;
 }
