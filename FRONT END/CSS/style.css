@@ -103,12 +103,11 @@ ul li.active a{
 /*CONTACT US */
 
 .input-box{
-border-radius: 20px;
+border-radius: 300px;
 padding: 10px;
-margin: 10px 0;
+margin: 20px auto;
 width: 50%;
 border: 2px solid #999;
-outline: none;
 }
 
 button{
@@ -120,15 +119,22 @@ button{
 	outline: none;
 }
 .contactbox{
-width: 400px;
-box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
-background: #D8C3BE;
-padding: 20px;
-text-align: center;
+transform: translate(-50%);
 position: absolute;
-top: 30%;
-bottom: 30%;
-left: 40%;
+left: 50%;
+ border:0;
+ background: #D8C3BE;
+ display: block;
+ text-align: center;
+ margin: 20px auto;
+ border: 2px solid #999;
+ width: 400px;
+ height: 250px;
+ outline: none;
+ color: back;
+ border-radius:24px;
+ transition: 0.25px;
+ bottom: 20%;
 }
 
 message{
@@ -149,8 +155,16 @@ object-fit:cover;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
 }
-
 .container {
   text-align: center;
   padding: 10px 20px;
+}
+/*Discussion room*/
+.chat_container{
+ min-width: 800px;
+ max-width: 1000px;
+ max-height: 800px;
+ height: 95vh;
+ background: #D8C3BE;
+ border-radius:10px;
 }
