@@ -7,7 +7,7 @@
     int uni(int,int);
     int main(void)
     {
-    	printf("\n\tImplementation of Kruskal's Algorithm\n");
+
     	printf("\nEnter the no. of vertices:");
     	scanf("%d",&n);
     	printf("\nEnter the cost adjacency matrix:\n");
