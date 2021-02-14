@@ -1,1 +1,2 @@
-	printf("ENTER THE IP ADDRESS: \n");
+else
+            [quotient[i]=0];
