@@ -1,183 +1,121 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 
-char checksum(char *a, char*b){
-	
-	if(strlen(a)==strlen(b)){
-		int length,i;
-		length = strlen(a);
-		char carry='0';
-        
-		for(i=length-1;i>=0;i--)
-        {
-			if(a[i]=='0' && b[i]=='0' && carry=='0')
-            {
-                b[i]='0';
-                carry='0';
-            }
-            else if(a[i]=='0' && b[i]=='0' && carry=='1')
-            {
-                b[i]='1';
-                carry='0';
- 
-            }
-            else if(a[i]=='0' && b[i]=='1' && carry=='0')
-            {
-                b[i]='1';
-                carry='0';
- 
-            }
-            else if(a[i]=='0' && b[i]=='1' && carry=='1')
-            {
-                b[i]='0';
-                carry='1';
- 
-            }
-            else if(a[i]=='1' && b[i]=='0' && carry=='0')
-            {
-                b[i]='1';
-                carry='0';
- 
-            }
-            else if(a[i]=='1' && b[i]=='0' && carry=='1')
-            {
-                b[i]='0';
-                carry='1';
- 
-            }
-            else if(a[i]=='1' && b[i]=='1' && carry=='0')
-            {
-                b[i]='0';
-                carry='1';
- 
-            }
-            else if(a[i]=='1' && b[i]=='1' && carry=='1')
-            {
-                b[i]='1';
-                carry='1';
- 
-            }
-            else
-                break;
-        }
-        for(i=length-1;i>=0;i--){
-        	if(carry=='1' && b[i]=='1'){
-        		b[i]='0';
-        		carry='1';
-			}
-			else if(carry=='1' && b[i]=='0'){
-				b[i]='1';
-				carry='0';
-			}
-			else{
-				break;
-			}
-		
-		
+int main()
+{
+	system("CLS");
+	char mainstring[50];
+	int len,l1;
+	int carry=0;
+	int j=0;
+
+	char a[50],b[50],c[50],complement[100];
+
+    long i,length;
+
+	printf("STRING TO BE TRANSMITTED : \n");
+    scanf("%s",&mainstring);
+    len=strlen(mainstring);
+    l1=len/2;
+	for (i=0; i<len; i++)
+	{
+		if(i<l1);
+		{
+			a[i]=mainstring[i];
 		}
-		printf("\tfunc  :  %s",b);
-        
+		if(i>=l1)
+		{
+		    b[j]=mainstring[i];
+		    j++;
+		}
 	}
-	return b;
+	
+	i=0;
+	for(i=l1-1; i>=0; i--)
+	{
+		if(a[i]=='0' && b[i]=='0' && carry==0)
+		{
+			c[i]='0';
+			carry=0;
+		}
+		else if(a[i]=='0' && b[i]=='0' && carry==1)
+		{
+			c[i]='1';
+			carry=0;
+		}
+		else if( a[i]=='0' && b[i]=='1' && carry==0)
+		{
+			c[i]='1';
+			carry=0;
+		}
+		else if( a[i]=='0' && b[i]=='1' && carry==1)
+		{
+			c[i]='0';
+			carry=1;
+		}
+		else if( a[i]=='1' && b[i]=='0' && carry==0)
+		{
+			c[i]='1';
+			carry=0;
+		}
+		else if( a[i]=='1' && b[i]=='0' && carry==1)
+		{
+			c[i]='0';
+			carry=1;
+		}
+		else if( a[i]=='1' && b[i]=='1' && carry==0)
+		{
+			c[i]='0';
+			carry=1;
+		}
+		else if( a[i]=='1' && b[i]=='1' && carry==1)
+		{
+			c[i]='1';
+			carry=1;
+		}
+		else
+		{	break;	}
+	}
+	printf("\n\n");
+	for(i=0; i<l1; i++)
+	{
+		printf("%c",a[i]);
+	}
+	printf("\n");
+	for(i=0; i<l1; i++)
+	{
+		printf("%c",b[i]);
+	}
+	
+	printf("\n========\n");
+
+	for(i=0; i<l1; i++)
+	{
+		printf("%c",c[i]);
+		complement[i]=c[i];
+	}
+	printf("\n\nCOMPLEMENT OF SUM: ");
+	for(i=0; i<l1; i++)
+	{
+		if(complement[i]=='1')
+		{
+			complement[i]='0';
+		}
+		else
+		{
+			complement[i]='1';
+		}
+		printf("%c",complement[i]);
+	}
+	printf("\n\n\nDATA TRANSMITTED TO RECEIVER IS : ");
+	printf("%s%s",mainstring,complement);
+	
+
+	return 0;
 }
 
-char complement(char *a , char *b){
-	
-	int i,length;
-	length = strlen(a);
-	for(i=0 ; i<length ; i++){
-		if(a[i]=='0'){
-			a[i]='1';
-		}
-		else if(a[i] == '1'){
-			a[i] = '0';
-		}
-
-		
-	}
-	printf("\nCheck Sum = %s",a);
-	printf("\nMessage = %s%s",b,a);
-}
-
-int reciever(char *msg , char *b){
-
-	printf("\n\n!!!!       Reciever's end      !!!");
-	int count,frame,i,j,k=0,leng;
-	
-	count = strlen(msg);
-	leng = strlen(b);
-	
-	frame = count/leng;
-	printf("\n\nreciever length = %d",leng);
-	printf("\nReciever each legn = %d",frame);
-	
-	char rcvr[frame][20]; 
-	  
-	for(i=0;i<frame;i++){
-		for(j=0;j<leng;j++){
-			rcvr[i][j] = msg[k];
-			k++;
-		}
-		rcvr[i][j+1]='\0';
-	}	
-	
-	for(i=0;i<frame;i++){
-		printf("\n Reciever Frame %d :-> %s",(i+1),rcvr[i]);
-	}
-	
-	for(i = 0 ; i < frame-1 ; i++){
-		printf("\tBefor ::  %s\n",rcvr[(i+1)]);
-		checksum( rcvr[i] , rcvr[(i+1)] );
-	}
-	checksum(rcvr[frame-1],b);
-	printf("\n\n\nFinal output : %s",b);
-}
-
-
-
-int main(){
-	
-	printf("\n!!!     Sender's end      !!!\n\n");
-	int frames,i,j,k=0,count1=0,frame;
-	char message[100];
-	printf("Enter the total number of frames : ");
-	scanf("%d",&frames);
-	printf("Enter the message : ");
-	scanf("%s",&message);
-	
-	char a='0';
- 	
- 	while(a!='\0'){
- 		a = message[count1];
- 		count1++;	
-	 }
-	count1--;
-	printf("Count %d",count1);
-	
-	frame = count1/frames;
-	printf("Frame %d",frame);
-
-	char each[frames][20];   
-	for(i=0;i<frames;i++){
-		for(j=0;j<frame;j++){
-			each[i][j] = message[k];
-			k++;
-		}
-		each[i][j+1]='\0';
-	}
-		
-	for(i=0;i<frames;i++){
-		printf("\nFrame %d :-> %s",(i+1),each[i]);
-	}
-	
-	for(i = 0 ; i < frames-1 ; i++){
-		printf("\tBefor ::  %s\n",each[(i+1)]);
-		checksum( each[i] , each[(i+1)] );
-	}
-		
-	complement(each[frames-1],message);
-	
-	reciever(message,each[frames-1]);
-	
-	
-}
+//1001100111100010                                                                                               
+//11100010                                                                                                                              
+//00100100                                                                                                                              
+//10000100
