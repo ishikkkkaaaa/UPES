@@ -1,3 +1,5 @@
+Q implement the simple linear regression from the scratch  without using any library fuction. Use the concept of variance and covariance of data points to find the required parameters
+
 ## Linear regression
 Linear regression is a linear approach to modeling the relationship
 between a scalar response (or dependent variable) and one or more
